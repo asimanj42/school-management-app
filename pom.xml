@@ -58,11 +58,13 @@
 			<version>3.1.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
+		<!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct -->
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
-			<version>1.2.0.Final</version>
+			<version>1.5.5.Final</version>
 		</dependency>
+
 
 		<!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor -->
 		<!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor -->
