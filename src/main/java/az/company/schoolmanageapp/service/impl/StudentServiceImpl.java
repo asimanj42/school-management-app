@@ -1,28 +1,28 @@
 package az.company.schoolmanageapp.service.impl;
 
 import az.company.schoolmanageapp.entity.Students;
+import az.company.schoolmanageapp.mapper.StudentsMapper;
 import az.company.schoolmanageapp.repository.StudentRepository;
 import az.company.schoolmanageapp.service.inter.StudentService;
+import model.dto.StudentsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-
 public class StudentServiceImpl implements StudentService {
 
     private StudentRepository studentRepository;
+    private StudentsMapper studentsMapper;
 
     @Autowired
-    public StudentServiceImpl(StudentRepository studentRepository) {
+    public StudentServiceImpl(
+            StudentRepository studentRepository, StudentsMapper studentsMapper) {
         this.studentRepository = studentRepository;
+        this.studentsMapper = studentsMapper;
     }
 
-    @Override
-    public List<Students> findAll() {
-        return studentRepository.findAll();
-    }
 
     @Override
     public List<Object[]> getStudentBySpecAndLesson() {
@@ -30,13 +30,26 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Students findById(Integer id) {
-        return studentRepository.findStudentById(id);
-
+    public List<StudentsDto> getAllStudent() {
+        List<Students> students = studentRepository.findAll();
+        List<StudentsDto> result = studentsMapper.toDto(students);
+        return result;
     }
 
     @Override
-    public void addStudent(Students student) {
-        studentRepository.save(student);
+    public StudentsDto findById(Integer id) {
+        Students students = studentRepository.findStudentById(id);
+        return studentsMapper.toDto(students);
     }
+
+    @Override
+    public void addStudent(StudentsDto student) {
+        studentRepository.save(studentsMapper.toEntity(student));
+    }
+
+//    @Override
+//    public void addStudent(Students student) {
+//
+//        studentRepository.save(student);
+//    }
 }

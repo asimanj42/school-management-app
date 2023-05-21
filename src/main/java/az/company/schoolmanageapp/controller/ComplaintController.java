@@ -37,11 +37,11 @@ public class ComplaintController {
         return ResponseEntity.ok(result);
     }
     //great worked
-    @PostMapping("complaints")
-    public void addComplaint( @RequestBody Complaint student) {
-        student.setId(0);
-        Complaint newStudent = complaintService.addComplaint(student);
-    }
+//    @PostMapping("complaints")
+//    public void addComplaint( @RequestBody Complaint student) {
+//        student.setId(0);
+//        Complaint newStudent = complaintService.addComplaint(student);
+//    }
 
 
 

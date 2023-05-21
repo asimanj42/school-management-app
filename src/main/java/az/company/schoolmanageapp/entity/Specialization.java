@@ -10,9 +10,8 @@ import java.util.List;
  */
 @Entity
 @Table(name = "specialization")
-public class Specialization implements Serializable {
+public class Specialization{
 
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)

@@ -12,9 +12,8 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "schedule")
-public class Schedule implements Serializable {
+public class Schedule  {
 
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)

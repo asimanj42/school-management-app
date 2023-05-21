@@ -1,15 +1,16 @@
 package az.company.schoolmanageapp.service.inter;
 
 import az.company.schoolmanageapp.entity.Students;
+import model.dto.StudentsDto;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface StudentService {
-    List<Students> findAll();
+//    List<StudentDto> findAll();
    List<Object[]> getStudentBySpecAndLesson();
 
-    Students findById(Integer id);
+   List<StudentsDto> getAllStudent();
 
-    void addStudent(Students student);
+    StudentsDto findById(Integer id);
+    void addStudent(StudentsDto student);
 }

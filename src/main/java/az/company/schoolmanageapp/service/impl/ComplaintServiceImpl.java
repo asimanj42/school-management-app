@@ -24,8 +24,8 @@ public class ComplaintServiceImpl implements ComplaintService {
         return complaintRepository.findAllStudentComplaints();
     }
 
-    @Override
-    public Complaint addComplaint(Complaint complaint) {
-        return complaintRepository.save(complaint);
-    }
+//    @Override
+//    public Complaint addComplaint(Complaint complaint) {
+//        return complaintRepository.save(complaint);
+//    }
 }

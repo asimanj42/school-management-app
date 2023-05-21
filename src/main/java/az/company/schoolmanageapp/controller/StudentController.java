@@ -2,6 +2,7 @@ package az.company.schoolmanageapp.controller;
 
 import az.company.schoolmanageapp.entity.Students;
 import az.company.schoolmanageapp.service.inter.StudentService;
+import model.dto.StudentsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,7 @@ public class StudentController {
     }
 
 
-    @GetMapping("students")
+    @GetMapping("studentsdata")
     public ResponseEntity<List<Map<String, Object>>> getStudents() {
         List<Map<String, Object>> result = new ArrayList<>();
         List<Object[]> studentsData = studentService.getStudentBySpecAndLesson();
@@ -37,9 +38,21 @@ public class StudentController {
         return ResponseEntity.ok(result);
     }
 
-    @PostMapping("/student")
-    public void addStudent(@RequestBody Students student){
+    @GetMapping("students")
+    public List<StudentsDto> getAllStudents() {
+        return studentService.getAllStudent();
+    }
+
+    @GetMapping("students/{studentId}")
+    public StudentsDto getStudentByStudentId(@PathVariable Integer studentId) {
+        return studentService.findById(studentId);
+    }
+
+    @PostMapping("student")
+    public void addStudent(@RequestBody StudentsDto student) {
         student.setId(0);
         studentService.addStudent(student);
     }
+
+
 }

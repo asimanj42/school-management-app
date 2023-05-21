@@ -11,9 +11,8 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "complaint")
-public class Complaint implements Serializable {
+public class Complaint {
 
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -94,10 +93,6 @@ public class Complaint implements Serializable {
         return true;
     }
 //
-    @Override
-    public String toString() {
-        return "Complaint[ id=" + id +
-                "text:"+complaintText +  "]";
-    }
+
 
 }
