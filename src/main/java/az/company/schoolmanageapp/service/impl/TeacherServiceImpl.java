@@ -4,7 +4,7 @@ import az.company.schoolmanageapp.entity.Teacher;
 import az.company.schoolmanageapp.mapper.TeacherMapper;
 import az.company.schoolmanageapp.repository.TeacherRepository;
 import az.company.schoolmanageapp.service.inter.TeacherService;
-import model.dto.TeacherDto;
+import az.company.schoolmanageapp.model.dto.TeacherDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

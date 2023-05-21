@@ -1,8 +1,7 @@
 package az.company.schoolmanageapp.controller;
 
-import az.company.schoolmanageapp.entity.Students;
 import az.company.schoolmanageapp.service.inter.StudentService;
-import model.dto.StudentsDto;
+import az.company.schoolmanageapp.model.dto.StudentsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

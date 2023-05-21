@@ -4,7 +4,7 @@ import az.company.schoolmanageapp.entity.Schedule;
 import az.company.schoolmanageapp.mapper.ScheduleMapper;
 import az.company.schoolmanageapp.repository.ScheduleRepository;
 import az.company.schoolmanageapp.service.inter.ScheduleService;
-import model.dto.ScheduleDto;
+import az.company.schoolmanageapp.model.dto.ScheduleDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

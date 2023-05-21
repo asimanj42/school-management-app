@@ -1,7 +1,7 @@
 package az.company.schoolmanageapp.mapper;
 
 import az.company.schoolmanageapp.entity.Teacher;
-import model.dto.TeacherDto;
+import az.company.schoolmanageapp.model.dto.TeacherDto;
 import org.mapstruct.*;
 
 import java.util.List;

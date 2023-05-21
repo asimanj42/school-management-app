@@ -1,7 +1,7 @@
 package az.company.schoolmanageapp.mapper;
 
 import az.company.schoolmanageapp.entity.Schedule;
-import model.dto.ScheduleDto;
+import az.company.schoolmanageapp.model.dto.ScheduleDto;
 import org.mapstruct.*;
 
 import java.util.List;

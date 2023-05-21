@@ -3,9 +3,8 @@ package az.company.schoolmanageapp.service.impl;
 import az.company.schoolmanageapp.entity.Lessons;
 import az.company.schoolmanageapp.mapper.LessonsMapper;
 import az.company.schoolmanageapp.repository.LessonRepository;
-import az.company.schoolmanageapp.repository.StudentRepository;
 import az.company.schoolmanageapp.service.inter.LessonService;
-import model.dto.LessonsDto;
+import az.company.schoolmanageapp.model.dto.LessonsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

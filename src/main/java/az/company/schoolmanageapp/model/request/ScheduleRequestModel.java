@@ -1,4 +1,4 @@
-package model.request;
+package az.company.schoolmanageapp.model.request;
 
 import lombok.Data;
 

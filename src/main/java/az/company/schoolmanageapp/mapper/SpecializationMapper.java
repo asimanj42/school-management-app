@@ -1,7 +1,7 @@
 package az.company.schoolmanageapp.mapper;
 
 import az.company.schoolmanageapp.entity.Specialization;
-import model.dto.SpecializationDto;
+import az.company.schoolmanageapp.model.dto.SpecializationDto;
 import org.mapstruct.*;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)

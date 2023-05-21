@@ -1,8 +1,6 @@
 package az.company.schoolmanageapp.service.inter;
 
-import az.company.schoolmanageapp.entity.Lessons;
-import model.dto.LessonsDto;
-import model.dto.StudentsDto;
+import az.company.schoolmanageapp.model.dto.LessonsDto;
 
 import java.util.List;
 

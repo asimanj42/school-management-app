@@ -1,10 +1,6 @@
-package model.dto;
+package az.company.schoolmanageapp.model.dto;
 
-import az.company.schoolmanageapp.entity.Specialization;
 import lombok.Data;
-import lombok.Value;
-
-import java.io.Serializable;
 
 @Data
 public class StudentsDto {

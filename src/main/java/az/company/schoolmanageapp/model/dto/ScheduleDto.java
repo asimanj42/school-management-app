@@ -1,10 +1,7 @@
-package model.dto;
+package az.company.schoolmanageapp.model.dto;
 
-import az.company.schoolmanageapp.entity.Lessons;
 import lombok.Data;
-import lombok.Value;
 
-import java.io.Serializable;
 import java.sql.Time;
 
 

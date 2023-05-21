@@ -1,9 +1,6 @@
-package model.dto;
+package az.company.schoolmanageapp.model.dto;
 
 import lombok.Data;
-import lombok.Value;
-
-import java.io.Serializable;
 
 
 @Data

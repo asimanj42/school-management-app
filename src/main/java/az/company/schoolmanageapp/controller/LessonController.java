@@ -1,19 +1,13 @@
 package az.company.schoolmanageapp.controller;
 
 
-import az.company.schoolmanageapp.entity.Lessons;
 import az.company.schoolmanageapp.service.inter.LessonService;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import model.dto.LessonsDto;
-import model.dto.TeacherDto;
+import az.company.schoolmanageapp.model.dto.LessonsDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("rest")

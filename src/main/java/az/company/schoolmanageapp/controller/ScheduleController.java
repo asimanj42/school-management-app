@@ -1,10 +1,7 @@
 package az.company.schoolmanageapp.controller;
 
-import az.company.schoolmanageapp.entity.Lessons;
-import az.company.schoolmanageapp.entity.Schedule;
 import az.company.schoolmanageapp.service.inter.ScheduleService;
-import model.dto.ScheduleDto;
-import model.dto.TeacherDto;
+import az.company.schoolmanageapp.model.dto.ScheduleDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

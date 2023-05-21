@@ -1,13 +1,13 @@
-package model.request;
+package az.company.schoolmanageapp.model.response;
 
 import lombok.Data;
 
 
 @Data
-public class GradeRequestModel {
+public class GradeResponseModel {
     private Integer id;
-    private StudentRequestModel student;
-    private LessonRequestModel lesson;
+    private StudentResponseModel student;
+    private LessonResponseModel lesson;
     private Integer activity;
     private Integer quiz;
     private Integer participation;
