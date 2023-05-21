@@ -6,11 +6,12 @@ import model.dto.StudentsDto;
 import java.util.List;
 
 public interface StudentService {
-//    List<StudentDto> findAll();
    List<Object[]> getStudentBySpecAndLesson();
 
    List<StudentsDto> getAllStudent();
 
     StudentsDto findById(Integer id);
     void addStudent(StudentsDto student);
+    void updateStudent(StudentsDto student);
+    void removeStudent(Integer studentId);
 }

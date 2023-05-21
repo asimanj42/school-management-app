@@ -4,6 +4,8 @@ package az.company.schoolmanageapp.controller;
 import az.company.schoolmanageapp.entity.Lessons;
 import az.company.schoolmanageapp.service.inter.LessonService;
 import jakarta.persistence.criteria.CriteriaBuilder;
+import model.dto.LessonsDto;
+import model.dto.TeacherDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,11 +33,16 @@ public class LessonController {
         return ResponseEntity.ok(lessonsData);
     }
 
-    @PostMapping("/lessons")
-    public void addLessons(@RequestBody Lessons lesson) {
-        lesson.setId(0);
-        lessonService.addLesson(lesson);
+    @GetMapping("lessons")
+    public List<LessonsDto> getAllLessons() {
+        return lessonService.getAllLessons();
     }
+
+//    @PostMapping("/lessons")
+//    public void addLessons(@RequestBody Lessons lesson) {
+//        lesson.setId(0);
+//        lessonService.addLesson(lesson);
+//    }
 
 
 }

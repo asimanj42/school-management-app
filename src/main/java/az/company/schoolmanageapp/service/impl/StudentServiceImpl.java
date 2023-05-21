@@ -47,6 +47,17 @@ public class StudentServiceImpl implements StudentService {
         studentRepository.save(studentsMapper.toEntity(student));
     }
 
+    @Override
+    public void updateStudent(StudentsDto student) {
+        studentRepository.save(studentsMapper.toEntity(student));
+    }
+
+    @Override
+    public void removeStudent(Integer studentId) {
+        Students student = studentRepository.findStudentById(studentId);
+        studentRepository.delete(student);
+    }
+
 //    @Override
 //    public void addStudent(Students student) {
 //

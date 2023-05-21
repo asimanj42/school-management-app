@@ -3,6 +3,7 @@ package az.company.schoolmanageapp.controller;
 import az.company.schoolmanageapp.entity.Lessons;
 import az.company.schoolmanageapp.entity.Teacher;
 import az.company.schoolmanageapp.service.inter.TeacherService;
+import model.dto.TeacherDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,9 +37,14 @@ public class TeacherController {
         }
         return ResponseEntity.ok(result);
     }
-    @PostMapping("/teacher")
-    public void addLessons(@RequestBody Teacher teacher) {
-        teacher.setId(0);
-        teacherService.addTeacher(teacher);
+
+    @GetMapping("teachers")
+    public List<TeacherDto> getAllTeachers() {
+        return teacherService.getAllTeacher();
     }
+//    @PostMapping("/teacher")
+//    public void addLessons(@RequestBody Teacher teacher) {
+//        teacher.setId(0);
+//        teacherService.addTeacher(teacher);
+//    }
 }

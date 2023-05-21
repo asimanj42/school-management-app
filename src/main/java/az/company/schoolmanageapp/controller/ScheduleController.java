@@ -3,6 +3,8 @@ package az.company.schoolmanageapp.controller;
 import az.company.schoolmanageapp.entity.Lessons;
 import az.company.schoolmanageapp.entity.Schedule;
 import az.company.schoolmanageapp.service.inter.ScheduleService;
+import model.dto.ScheduleDto;
+import model.dto.TeacherDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,10 +41,15 @@ public class ScheduleController {
         }
         return ResponseEntity.ok(result);
     }
-    @PostMapping("/schedule")
-    public void addLessons(@RequestBody Schedule schedule) {
-        schedule.setId(0);
-        scheduleService.addSchedule(schedule);
+
+    @GetMapping("schedules")
+    public List<ScheduleDto> getAllSchedule() {
+        return scheduleService.getAllSchedule();
     }
+//    @PostMapping("/schedule")
+//    public void addLessons(@RequestBody Schedule schedule) {
+//        schedule.setId(0);
+//        scheduleService.addSchedule(schedule);
+//    }
 
 }
