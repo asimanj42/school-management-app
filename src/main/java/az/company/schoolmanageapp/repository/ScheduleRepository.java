@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 public interface ScheduleRepository extends JpaRepository<Schedule, Integer> {
-
     @Query("SELECT st.name, st.surname, l.name, s.startTime, s.endTime, s.classroom " +
             "FROM Schedule s " +
             "JOIN s.lessonId l " +

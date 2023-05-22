@@ -15,10 +15,5 @@ public interface LessonRepository extends JpaRepository<Lessons, Integer> {
 
     List<Object[]>   findLessonsByStudentId(@Param("studentId") Integer studentId);
 
-    //    @Query("SELECT st.name, st.surname, l.name, s.startTime, s.endTime, s.classroom " +
-//            "FROM Les s " +
-//            "JOIN s.lessonId l " +
-//            "JOIN l.specialitizationId sp " +
-//            "JOIN sp.studentsList st " )
 
 }

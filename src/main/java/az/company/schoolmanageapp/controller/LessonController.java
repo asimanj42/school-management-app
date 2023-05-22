@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("rest")
 public class LessonController {
 
-    private LessonService lessonService;
+    private final LessonService lessonService;
 
     @Autowired
     public LessonController(LessonService lessonService) {
@@ -32,11 +32,21 @@ public class LessonController {
         return lessonService.getAllLessons();
     }
 
-//    @PostMapping("/lessons")
-//    public void addLessons(@RequestBody Lessons lesson) {
-//        lesson.setId(0);
-//        lessonService.addLesson(lesson);
-//    }
+    @PostMapping("lessons")
+    public void addLesson(@RequestBody LessonsDto lesson) {
+        lesson.setId(0);
+        lessonService.addLesson(lesson);
+    }
+
+    @PutMapping("lessons")
+    public void updateLesson(@RequestBody LessonsDto lesson) {
+        lessonService.updateLesson(lesson);
+    }
+
+    @DeleteMapping("lesson/{lessonId}")
+    public void removeLesson(@PathVariable Integer lessonId) {
+        lessonService.removeLesson(lessonId);
+    }
 
 
 }

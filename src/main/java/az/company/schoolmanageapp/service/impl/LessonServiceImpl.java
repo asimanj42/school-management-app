@@ -1,6 +1,7 @@
 package az.company.schoolmanageapp.service.impl;
 
 import az.company.schoolmanageapp.entity.Lessons;
+import az.company.schoolmanageapp.exception.LessonNotFoundException;
 import az.company.schoolmanageapp.mapper.LessonsMapper;
 import az.company.schoolmanageapp.repository.LessonRepository;
 import az.company.schoolmanageapp.service.inter.LessonService;
@@ -9,11 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LessonServiceImpl implements LessonService {
-    private LessonRepository lessonRepository;
-    private LessonsMapper lessonsMapper;
+    private final LessonRepository lessonRepository;
+    private final LessonsMapper lessonsMapper;
 
     @Autowired
     public LessonServiceImpl(LessonRepository lessonRepository, LessonsMapper lessonsMapper) {
@@ -33,8 +35,35 @@ public class LessonServiceImpl implements LessonService {
         return result;
     }
 
-//    @Override
-//    public void addLesson(Lessons lesson) {
-//        lessonRepository.save(lesson);
-//    }
+    @Override
+    public LessonsDto findById(Integer id) {
+        Lessons lesson = getLessonById(id);
+        return lessonsMapper.toDto(lesson);
+    }
+
+    @Override
+    public Lessons getLessonById(Integer id) {
+        Optional<Lessons> lessons = lessonRepository.findById(id);
+        if (lessons.isPresent()) {
+            return (lessons.get());
+        }
+        throw new LessonNotFoundException("Lesson not found by id" + id);
+    }
+
+
+    @Override
+    public void addLesson(LessonsDto lesson) {
+        lessonRepository.save(lessonsMapper.toEntity(lesson));
+    }
+
+    @Override
+    public void updateLesson(LessonsDto lesson) {
+        lessonRepository.save(lessonsMapper.toEntity(lesson));
+    }
+
+    @Override
+    public void removeLesson(Integer lessonId) {
+        Lessons lesson = getLessonById(lessonId);
+        lessonRepository.delete(lesson);
+    }
 }

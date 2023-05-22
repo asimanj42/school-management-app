@@ -10,8 +10,6 @@ import java.util.List;
 
 @Repository
 public interface SpecializationRepository extends JpaRepository<Specialization, Integer> {
-
-
     @Query("select s.specialityName,l.name " +
             "FROM Specialization s " +
             "JOIN s.lessonsList l")

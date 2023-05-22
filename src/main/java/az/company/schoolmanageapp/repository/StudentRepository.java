@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Students, Integer> {
-
     @Query("SELECT s.name, s.specialityId.specialityName, l.name FROM Students s JOIN s.specialityId sp JOIN sp.lessonsList l")
     List<Object[]> findStudentInfoWithSpecializationAndLessons();
 

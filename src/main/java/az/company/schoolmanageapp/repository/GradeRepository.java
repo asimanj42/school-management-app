@@ -15,8 +15,5 @@ public interface GradeRepository extends JpaRepository<Grades, Integer> {
 
 
 
-//    void updateGrades(@Param("id") Integer id, @Param("quiz") Integer quiz, @Param("participation") Integer participation, @Param("midterm") Integer midterm, @Param("final1") Integer final1);
-//    List<Grades> findByStudentIdAndLessonId(Integer studentId, Integer lessonId);
-//    Optional<Grades> findFirstByStudentIdAndLessonIdOrderByIdDesc(Integer studentId, Integer lessonId);
 
 }
