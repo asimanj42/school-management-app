@@ -2,6 +2,7 @@ package az.company.schoolmanageapp.service.impl;
 
 import az.company.schoolmanageapp.entity.Specialization;
 import az.company.schoolmanageapp.entity.Students;
+import az.company.schoolmanageapp.exception.SpecializationNotFoundException;
 import az.company.schoolmanageapp.exception.StudentNotFoundException;
 import az.company.schoolmanageapp.mapper.SpecializationMapper;
 import az.company.schoolmanageapp.model.dto.SpecializationDto;
@@ -45,29 +46,29 @@ public class SpecializationServiceImpl implements SpecializationService {
     }
 
     @Override
-    public Students getStudentById(Integer id) {
-        Optional<Students> students = studentRepository.findById(id);
-        if (students.isPresent()) {
-            return (students.get());
+    public Specialization getSpecializationById(Integer id) {
+        Optional<Specialization> specialization = specializationRepository.findById(id);
+        if (specialization.isPresent()) {
+            return (specialization.get());
         }
-        throw new StudentNotFoundException("Student not found by id" + id);
+        throw new SpecializationNotFoundException("Specialization not found by id" + id);
 
     }
 
 
     @Override
-    public void addStudent(StudentsDto student) {
-        studentRepository.save(studentsMapper.toEntity(student));
+    public void addSpecialization(SpecializationDto specialization) {
+        specializationRepository.save(specializationMapper.toEntity(specialization));
     }
 
     @Override
-    public void updateStudent(StudentsDto student) {
-        studentRepository.save(studentsMapper.toEntity(student));
+    public void updateSpecialization(SpecializationDto specialization) {
+        specializationRepository.save(specializationMapper.toEntity(specialization));
     }
 
     @Override
-    public void removeStudent(Integer studentId) {
-        Students student=getStudentById(studentId);
-        studentRepository.delete(student);
+    public void removeSpecialization(Integer specializationId) {
+        Specialization specialization = getSpecializationById(specializationId);
+        specializationRepository.delete(specialization);
     }
 }

@@ -12,6 +12,8 @@ public interface SpecializationService {
 
     List<SpecializationDto> getAllSpecialization();
 
+    Specialization getSpecializationById(Integer id);
+
     SpecializationDto findById(Integer id);
 
     void addSpecialization(SpecializationDto teacher);
