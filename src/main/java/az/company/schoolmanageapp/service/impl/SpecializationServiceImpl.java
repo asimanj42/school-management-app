@@ -1,12 +1,9 @@
 package az.company.schoolmanageapp.service.impl;
 
 import az.company.schoolmanageapp.entity.Specialization;
-import az.company.schoolmanageapp.entity.Students;
 import az.company.schoolmanageapp.exception.SpecializationNotFoundException;
-import az.company.schoolmanageapp.exception.StudentNotFoundException;
 import az.company.schoolmanageapp.mapper.SpecializationMapper;
 import az.company.schoolmanageapp.model.dto.SpecializationDto;
-import az.company.schoolmanageapp.model.dto.StudentsDto;
 import az.company.schoolmanageapp.repository.SpecializationRepository;
 import az.company.schoolmanageapp.service.inter.SpecializationService;
 import org.springframework.beans.factory.annotation.Autowired;

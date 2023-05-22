@@ -1,9 +1,6 @@
 package az.company.schoolmanageapp.controller;
 
-import az.company.schoolmanageapp.entity.Lessons;
-import az.company.schoolmanageapp.entity.Specialization;
 import az.company.schoolmanageapp.model.dto.SpecializationDto;
-import az.company.schoolmanageapp.model.dto.StudentsDto;
 import az.company.schoolmanageapp.service.inter.SpecializationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +14,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("rest")
 public class SpecializationController {
-    private SpecializationService specializationService;
+    private final SpecializationService specializationService;
 
     @Autowired
     public SpecializationController(SpecializationService specializationService) {
@@ -55,7 +52,7 @@ public class SpecializationController {
     }
 
     @PutMapping("specialization/{specializationId}")
-    public void updateSpecialization(@RequestBody SpecializationDto specialization, @PathVariable Integer specializationId) {
+    public void updateSpecialization(@RequestBody SpecializationDto specialization) {
         specializationService.updateSpecialization(specialization);
     }
 
