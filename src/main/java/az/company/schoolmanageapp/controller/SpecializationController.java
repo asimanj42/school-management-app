@@ -2,6 +2,7 @@ package az.company.schoolmanageapp.controller;
 
 import az.company.schoolmanageapp.entity.Lessons;
 import az.company.schoolmanageapp.entity.Specialization;
+import az.company.schoolmanageapp.model.dto.SpecializationDto;
 import az.company.schoolmanageapp.service.inter.SpecializationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +16,11 @@ import java.util.Map;
 @RestController
 @RequestMapping("rest")
 public class SpecializationController {
-    private SpecializationService   specializationService;
+    private SpecializationService specializationService;
 
     @Autowired
     public SpecializationController(SpecializationService specializationService) {
-        this.specializationService  = specializationService;
+        this.specializationService = specializationService;
     }
 
 
@@ -36,9 +37,14 @@ public class SpecializationController {
         return ResponseEntity.ok(result);
     }
 
-    @PostMapping("/specializations")
-    public void addSpecialization(@RequestBody Specialization specialization) {
-        specialization.setId(0);
-        specializationService.addSpecialization(specialization);
+    @GetMapping("/specializations")
+    public List<SpecializationDto> getALllSpecializations() {
+        return specializationService.getAllSpecialization();
     }
+
+//    @PostMapping("/specializations")
+//    public void addSpecialization(@RequestBody Specialization specialization) {
+//        specialization.setId(0);
+//        specializationService.addSpecialization(specialization);
+//    }
 }

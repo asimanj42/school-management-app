@@ -1,5 +1,6 @@
 package az.company.schoolmanageapp.controller;
 
+import az.company.schoolmanageapp.entity.Students;
 import az.company.schoolmanageapp.service.inter.StudentService;
 import az.company.schoolmanageapp.model.dto.StudentsDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,7 +60,7 @@ public class StudentController {
     }
 
     @DeleteMapping("student/{studentId}")
-    public void addStudent(@PathVariable Integer studentId) {
+    public void removeStudent(@PathVariable Integer studentId) {
         studentService.removeStudent(studentId);
     }
 
