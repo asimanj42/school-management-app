@@ -3,6 +3,7 @@ package az.company.schoolmanageapp.controller;
 import az.company.schoolmanageapp.entity.Lessons;
 import az.company.schoolmanageapp.entity.Specialization;
 import az.company.schoolmanageapp.model.dto.SpecializationDto;
+import az.company.schoolmanageapp.model.dto.StudentsDto;
 import az.company.schoolmanageapp.service.inter.SpecializationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,14 +38,30 @@ public class SpecializationController {
         return ResponseEntity.ok(result);
     }
 
-    @GetMapping("/specializations")
-    public List<SpecializationDto> getALllSpecializations() {
+    @GetMapping("specializations")
+    public List<SpecializationDto> getAllSpecialization() {
         return specializationService.getAllSpecialization();
     }
 
-//    @PostMapping("/specializations")
-//    public void addSpecialization(@RequestBody Specialization specialization) {
-//        specialization.setId(0);
-//        specializationService.addSpecialization(specialization);
-//    }
+    @GetMapping("specializations/{specializationId}")
+    public SpecializationDto getSpecializationsById(@PathVariable Integer specializationId) {
+        return specializationService.findById(specializationId);
+    }
+
+    @PostMapping("specialization")
+    public void addSpecialization(@RequestBody SpecializationDto specialization) {
+        specialization.setId(0);
+        specializationService.addSpecialization(specialization);
+    }
+
+    @PutMapping("specialization/{specializationId}")
+    public void updateSpecialization(@RequestBody SpecializationDto specialization, @PathVariable Integer specializationId) {
+        specializationService.updateSpecialization(specialization);
+    }
+
+    @DeleteMapping("specialization/{specializationId}")
+    public void removeSpecialization(@PathVariable Integer specializationId) {
+        specializationService.removeSpecialization(specializationId);
+    }
+
 }

@@ -18,8 +18,8 @@ import java.util.Optional;
 @Service
 public class SpecializationServiceImpl implements SpecializationService {
 
-    private SpecializationRepository specializationRepository;
-    private SpecializationMapper specializationMapper;
+    private final SpecializationRepository specializationRepository;
+    private final SpecializationMapper specializationMapper;
 
     @Autowired
     public SpecializationServiceImpl(SpecializationRepository specializationRepository, SpecializationMapper specializationMapper) {
