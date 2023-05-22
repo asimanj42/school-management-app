@@ -51,8 +51,6 @@ public class SpecializationServiceImpl implements SpecializationService {
         throw new SpecializationNotFoundException("Specialization not found by id" + id);
 
     }
-
-
     @Override
     public void addSpecialization(SpecializationDto specialization) {
         specializationRepository.save(specializationMapper.toEntity(specialization));

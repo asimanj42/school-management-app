@@ -15,7 +15,7 @@ import java.util.Map;
 @RequestMapping("rest")
 public class TeacherController {
 
-    private TeacherService teacherService;
+    private final TeacherService teacherService;
 
     @Autowired
     public TeacherController(TeacherService teacherService) {
@@ -37,12 +37,29 @@ public class TeacherController {
     }
 
     @GetMapping("teachers")
-    public List<TeacherDto> getAllTeachers() {
+    public List<TeacherDto> getAllTeacher() {
         return teacherService.getAllTeacher();
     }
-//    @PostMapping("/teacher")
-//    public void addLessons(@RequestBody Teacher teacher) {
-//        teacher.setId(0);
-//        teacherService.addTeacher(teacher);
-//    }
+
+    @GetMapping("teachers/{teacherId}")
+    public TeacherDto getTeacherByTeacherId(@PathVariable Integer teacherId) {
+        return teacherService.findById(teacherId);
+    }
+
+    @PostMapping("teacher")
+    public void addTeacher(@RequestBody TeacherDto teacher) {
+        teacher.setId(0);
+        teacherService.addTeacher(teacher);
+    }
+
+    @PutMapping("teacher")
+    public void updateTeacher(@RequestBody TeacherDto teacher) {
+        teacherService.updateTeacher(teacher);
+    }
+
+    @DeleteMapping("teacher/{teacherId}")
+    public void removeTeacher(@PathVariable Integer teacherId) {
+        teacherService.removeTeacher(teacherId);
+    }
+
 }

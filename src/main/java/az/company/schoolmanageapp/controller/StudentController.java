@@ -1,6 +1,5 @@
 package az.company.schoolmanageapp.controller;
 
-import az.company.schoolmanageapp.entity.Students;
 import az.company.schoolmanageapp.service.inter.StudentService;
 import az.company.schoolmanageapp.model.dto.StudentsDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,8 +53,8 @@ public class StudentController {
         studentService.addStudent(student);
     }
 
-    @PutMapping("student/{studentId}")
-    public void updateStudent(@RequestBody StudentsDto student, @PathVariable Integer studentId) {
+    @PutMapping("student")
+    public void updateStudent(@RequestBody StudentsDto student) {
         studentService.updateStudent(student);
     }
 

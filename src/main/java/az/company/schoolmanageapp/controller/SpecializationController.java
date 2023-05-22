@@ -51,7 +51,7 @@ public class SpecializationController {
         specializationService.addSpecialization(specialization);
     }
 
-    @PutMapping("specialization/{specializationId}")
+    @PutMapping("specialization")
     public void updateSpecialization(@RequestBody SpecializationDto specialization) {
         specializationService.updateSpecialization(specialization);
     }

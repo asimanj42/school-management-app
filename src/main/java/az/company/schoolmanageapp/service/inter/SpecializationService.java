@@ -2,7 +2,6 @@ package az.company.schoolmanageapp.service.inter;
 
 import az.company.schoolmanageapp.entity.Specialization;
 import az.company.schoolmanageapp.model.dto.SpecializationDto;
-import az.company.schoolmanageapp.model.dto.TeacherDto;
 
 import java.util.List;
 

@@ -15,7 +15,7 @@ import java.util.Map;
 @RequestMapping("rest")
 public class ScheduleController {
 
-    private ScheduleService scheduleService;
+    private final ScheduleService scheduleService;
 
     @Autowired
     public ScheduleController(ScheduleService scheduleService) {
@@ -40,13 +40,30 @@ public class ScheduleController {
     }
 
     @GetMapping("schedules")
-    public List<ScheduleDto> getAllSchedule() {
+    public List<ScheduleDto> getAllSchedules() {
         return scheduleService.getAllSchedule();
     }
-//    @PostMapping("/schedule")
-//    public void addLessons(@RequestBody Schedule schedule) {
-//        schedule.setId(0);
-//        scheduleService.addSchedule(schedule);
-//    }
+
+    @GetMapping("schedules/{studentId}")
+    public ScheduleDto getScheduleById(@PathVariable Integer scheduleId) {
+        return scheduleService.findById(scheduleId);
+    }
+
+    @PostMapping("schedules")
+    public void addSchedule(@RequestBody ScheduleDto schedule) {
+        schedule.setId(0);
+        scheduleService.addSchedule(schedule);
+    }
+
+    @PutMapping("schedules")
+    public void updateSchedule(@RequestBody ScheduleDto schedule) {
+        scheduleService.updateSchedule(schedule);
+    }
+
+    @DeleteMapping("schedule/{scheduleId}")
+    public void removeSchedule(@PathVariable Integer scheduleId) {
+        scheduleService.removeSchedule(scheduleId);
+    }
+
 
 }

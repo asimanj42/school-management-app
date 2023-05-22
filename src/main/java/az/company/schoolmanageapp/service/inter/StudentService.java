@@ -6,10 +6,9 @@ import az.company.schoolmanageapp.model.dto.StudentsDto;
 import java.util.List;
 
 public interface StudentService {
-   List<Object[]> getStudentBySpecAndLesson();
+    List<Object[]> getStudentBySpecAndLesson();
 
-   List<StudentsDto> getAllStudent();
-
+    List<StudentsDto> getAllStudent();
     StudentsDto findById(Integer id);
     Students getStudentById(Integer id);
     void addStudent(StudentsDto student);
